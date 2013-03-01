@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<vars>
+		<var name="Points" value="0"></var>
+	</vars>
+	<scenes>
+		<scene name="start">
+			<image src="papertexture.jpg"/>
+			<text>
+				Test text for a first frame.
+			</text>
+			<answers>
+				<answer id="first" value="1" next="thirdScene">
+					first answer, if you choose it, you will proceede to the 'thirdScene'
+				</answer>
+				<answer id="second" value="2" next="thirdScene">
+					second answer, if you choose it, you will proceede to the 'thirdScene'
+				</answer>
+				<answer id="third" value="3">
+					third answer, if you choose it, you will proceede to frame next to this
+				</answer>
+				<answer id="forth" value="4">
+					forth answer. It has a condition
+				</answer>
+			</answers>
+			<condition>
+				'Points=value;if (value == 4) {goto("forthScene");}''
+			</condition>
+		</scene>
+		<scene name="secondScene">
+			<image color="0xFFC560" />
+			<text>
+				Second frame ('secondScene'). It has a color as background (image tag).
+			</text>
+			<answers>
+				<answer next="start">
+					Back
+				</answer>
+			</answers>
+		</scene>
+		<scene name="thirdScene">
+			<text>
+				Third frame ('thirdScene'). It has no any backgroung (image tag).
+			</text>
+			<answers>
+				<answer next="start">
+					Back
+				</answer>
+			</answers>
+		</scene>
+		<scene name="forthScene">
+			<image text="Quest Engine" />
+			<text>
+				Forth frame ('forthScene'). It has a text-based background (image tag).
+			</text>
+			<answers>
+				<answer next="start">
+					Back
+				</answer>
+			</answers>
+		</scene>
+	</scenes>
+</data>
